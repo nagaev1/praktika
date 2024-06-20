@@ -8,9 +8,10 @@
     <title>Pythagoras</title>
 </head>
 <body class=" bg-th-bg min-h-screen flex flex-col justify-between">
-    <nav class="h-20 bg-th-green-dark ">
-        <div class=" max-w-screen-xl xl:px-0 px-4 mx-auto h-full flex items-center italic font-black text-3xl text-white">
-            <a href="{{route('index')}}">Pythagoras</a>
+    <nav class=" bg-th-green-dark">
+        <div class=" max-w-screen-xl my-4 h-full xl:px-0 px-4 mx-auto items-center text-white flex flex-wrap gap-4">
+            <a href="{{route('index')}}" class="italic font-black text-3xl">Pythagoras</a>
+            <a href="{{route('sciences')}}" class="font-black text-xl">Начать учиться</a>
         </div>
     </nav>
     {{$slot}}

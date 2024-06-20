@@ -26,13 +26,13 @@ class ScienceController extends Controller
         $science = Science::where('name', $science_name)->first();
         $topic = Topic::where('science_id', $science->id)->where('name', $topic_name)->first();  
         $lessons = Lesson::where('topic_id', $topic->id)->get();
-        return view('lessons', ['lessons' => $lessons, 'topic' => $topic->name, 'science' => $science]);
+        return view('lessons', ['lessons' => $lessons, 'topic' => $topic, 'science' => $science]);
     }
 
     function show_lesson($science_name, $topic_name, $lesson_name) {
         $science = Science::where('name', $science_name)->first();
         $topic = Topic::where('science_id', $science->id)->where('name', $topic_name)->first();  
         $lesson = Lesson::where('topic_id', $topic->id)->where('name', $lesson_name)->first();
-        return view('show_lesson', ['lesson' => $lesson, 'topic' => $topic->name, 'science' => $science]);
+        return view('show_lesson', ['lesson' => $lesson, 'topic' => $topic, 'science' => $science]);
     }
 }

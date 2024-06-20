@@ -7,8 +7,10 @@
         </section>
         <section class=" max-w-screen-xl mx-auto py-10">
             <div class=" grid lg:grid-cols-3 grid-cols-1 xl:p-0 p-4 justify-items-center items-center gap-10 ">
+                <div class="">
                     <img class="rounded" src="{{ url('/images/boy-read.png')}}" alt="img">
-                <div class=" col-span-2 text-th-green-dark text-3xl lg:text-left text-center">
+                </div>
+                <div class=" lg:col-span-2 text-th-green-dark text-3xl lg:text-left text-center">
                     <h1 class="font-bold mb-8">КАК МОТРИВИРОВАТЬ ШКОЛЬНИКОВ УЧИТСЯ?</h1>
                     <p>
                     Избавтесь от рутины проверки тетрадей и составления отчетов. Система проверки работы школьников работает автоматитески. Интеграция Pythagoras
@@ -19,7 +21,7 @@
         </section>
         <section class=" bg-th-green py-10">
             <div class=" max-w-screen-xl mx-auto grid lg:grid-cols-3 grid-cols-1 items-center justify-items-center gap-10 xl:p-0 p-4">
-                <div class=" col-span-2 text-white text-3xl order-2 lg:order-1 lg:text-right text-center">
+                <div class=" lg:col-span-2 text-white text-3xl order-2 lg:order-1 lg:text-right text-center">
                     <h1 class="font-bold mb-8">НАША ЗАДАЧА</h1>
                     <p>
                         облегчить обучение ребёнка и предоставить вам темы для обучения и задания для выполнения с помощью которых вы сможете  узнать ваши знания в теме
