@@ -10,8 +10,17 @@
 <body class=" bg-th-bg min-h-screen flex flex-col justify-between">
     <nav class=" bg-th-green-dark">
         <div class=" max-w-screen-xl my-4 h-full xl:px-0 px-4 mx-auto items-center text-white flex flex-wrap gap-4">
-            <a href="{{route('index')}}" class="italic font-black text-3xl">Pythagoras</a>
-            <a href="{{route('sciences')}}" class="font-black text-xl">Начать учиться</a>
+            <img src="{{url('/images/logo.png')}}" alt="logo" class=" w-12">
+            <a href="{{route('home')}}" class="italic font-black text-3xl">Pythagoras</a>
+            <div class=" gap-4 flex justify-around">
+                <a href="{{route('sciences')}}" class="font-black text-xl">Начать учиться</a>
+                @auth('web')
+                    <a href="{{route('auth.showProfile')}}" class="font-black text-xl">Профиль</a>
+                @endauth
+                @guest('web')
+                    <a href="{{route('auth.showLoginForm')}}" class="font-black text-xl">Войти</a>
+                @endguest
+            </div>
         </div>
     </nav>
     {{$slot}}

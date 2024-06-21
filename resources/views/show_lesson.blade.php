@@ -1,6 +1,8 @@
 <x-layout>
     <header class=" max-w-screen-xl mx-auto flex justify-start gap-4 py-4">
-        <img src="{{url('images/'.$science->image)}}" alt="img" class=" w-24">
+        <a href="{{route('sciences.lessons_by_topic', [$science->name, $topic->name])}}">
+            <img src="{{url('images/'.$topic->image)}}" alt="img" class=" w-24">
+        </a>
         <div class=" flex flex-col justify-around text-xl">
             <a href="{{route('sciences')}}" class="hover:underline text-th-green ">главная</a>
             <a href="{{route('sciences.topics_by_science', $science->name)}}" class="hover:underline text-th-green ">{{$science->ru_name}}</a>
