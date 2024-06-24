@@ -11,7 +11,9 @@
     <nav class=" bg-th-green-dark">
         <div class=" max-w-screen-xl my-4 h-full xl:px-0 px-4 mx-auto items-center text-white flex flex-wrap gap-4">
             <img src="{{url('/images/logo.png')}}" alt="logo" class=" w-12">
-            <a href="{{route('home')}}" class="italic font-black text-3xl">Pythagoras</a>
+            <a href="{{route('home')}}" class="italic font-black text-3xl">
+                <span class=" text-[#3300FF]">P</span><span class=" text-[#EA5400]">y</span><span class="text-[#F1EC5D]">t</span>hagoras
+            </a>
             <div class=" gap-4 flex justify-around">
                 <a href="{{route('sciences')}}" class="font-black text-xl">Начать учиться</a>
                 @auth('web')
