@@ -7,6 +7,9 @@ use App\Http\Controllers\AuthController;
 
 
 Route::get('/home', [Controller::class, 'index'])->name('home');
+Route::get('/', function () {
+    return redirect()->route('home');
+});
 
 
 Route::middleware('auth')->group(function () {
@@ -27,4 +30,7 @@ Route::get('/sciences', [ScienceController::class, 'index'])->name('sciences');
 Route::get('sciences/{name}', [ScienceController::class, 'topics_by_science'])->name('sciences.topics_by_science');
 Route::get('sciences/{science_name}/{topic_name}', [ScienceController::class, 'lessons_by_topic'])->name('sciences.lessons_by_topic');
 Route::get('sciences/{science_name}/{topic_name}/{lesson_name}', [ScienceController::class, 'show_lesson'])->name('sciences.show_lesson');
+Route::middleware('auth')->group(function () {
+    Route::post('sciences/{science_name}/{topic_name}/{lesson_name}', [ScienceController::class, 'store_mark'])->name('sciences.store_mark');
+});
 

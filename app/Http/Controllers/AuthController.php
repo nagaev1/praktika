@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 
+use App\Models\Lesson;
+use App\Models\Mark;
+use App\Models\Topic;
+use App\Models\Science;
+
 use App\Models\User;
 
 class AuthController extends Controller
@@ -62,7 +67,15 @@ class AuthController extends Controller
 
     public function showProfile()
     {
-        return view('auth.profile');
+        $userId = Auth::id();
+        $user = User::findOrFail($userId);
+        $marks = Mark::where('user_id', $userId)->get();
+        $lessons_id = $marks->pluck('lesson_id')->toArray();
+        $lessons = Lesson::whereIn('id', $lessons_id)->get();
+        $topics = Topic::whereIn('id', $lessons->pluck('topic_id')->toArray())->get();
+        $sciences = Science::whereIn('id', $topics->pluck('science_id')->toArray())->get();
+
+        return view('auth.profile', ['marks' => $marks, 'lessons' => $lessons, 'topics' => $topics, 'sciences' => $sciences]);
     }
 
     public function showEditForm()

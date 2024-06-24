@@ -18,7 +18,6 @@
                             <input type="password" placeholder="password" name="password" class="p-2 text-xl rounded">
                         </div>
                     </div>
-                    <input type="file" name="banner" placeholder="banner">
                 </div>
                 <div class=" bg-th-bg-dark py-10 px-4">
                     <div class=" flex md:justify-end justify-center  items-center gap-4 flex-wrap">

@@ -21,7 +21,11 @@
             <x-list_block header="Задание:" class="text-xl">
                 <div class=" grid gap-4 items-center">
                     <div class="">
-                        <form onsubmit="onSubmit(event)" class="mb-4 grid gap-4">
+                        <form method="POST" 
+                        action="{{route('sciences.store_mark',
+                        ['science_name' => $science->name, 'topic_name' => $topic->name, 'lesson_name' => $lesson->name])}}"
+                        class="mb-4 grid gap-4">
+                            @csrf
                             @include('exercises.'.$lesson->name)
                         </form>
                     </div>
@@ -29,20 +33,4 @@
             </x-list_block>
         </section>
     </main>
-
-    <script>
-
-        let questions = document.getElementsByClassName('question')
-        function onSubmit(e) {
-            e.preventDefault()
-            let points = 0
-            let correctButtons = document.getElementsByClassName('correct')
-            for(let el of correctButtons) {
-                if (el.checked) {
-                    points += 1
-                }
-            }
-            document.getElementById('result').innerHTML = `Результат: У вас ${points} правильных ответов из ${correctButtons.length} вопросов`
-        }
-    </script>
 </x-layout>

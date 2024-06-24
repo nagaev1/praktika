@@ -19,6 +19,17 @@
                             <a href="{{ route('sciences.show_lesson', [$science->name, $topic->name, $lesson->name]) }}">
                                 {{$lesson->ru_name}}
                             </a>
+                            @auth
+                                @php
+                                    $mark = 0;
+                                    if (!empty($marks->where('lesson_id', $lesson->id)->first())) {
+                                        $mark = $marks->where('lesson_id', $lesson->id)->first()->mark;
+                                    }
+                                @endphp
+                                @if ($mark)
+                                    <span>| Ваша отметка: {{ $mark }}</span>
+                                @endif
+                            @endauth
                         </li>
                     @endforeach
                     @if ($lessons->isEmpty())
